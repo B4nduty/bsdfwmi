@@ -49,7 +49,7 @@ public abstract class ItemEntityMixin extends Entity {
             return false;
         } else if (stack2.hasNbt() ^ stack1.hasNbt()) {
             return false;
-        } else return !stack2.hasNbt() || stack2.getNbt().equals(stack1.getNbt());
+        } else if(stack2.getNbt() == null) return false; return !stack2.hasNbt() || stack2.getNbt().equals(stack1.getNbt());
     }
 
     @Shadow private int pickupDelay;
